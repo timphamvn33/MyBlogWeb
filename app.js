@@ -70,21 +70,15 @@ app.post("/compose", function(req, res){
   // add the call back function to save the data and go back to home page 
     post.save()
       res.redirect("/")
-   
-
-
-  
 
 })
 
+let port = process.env.PORT; 
+if(port == null || port == ""){
+ port = 3000;
+}
 
 
-
-
-
-
-
-
-app.listen(process.env.PORT || 3000, function() {
+app.listen(port, function() {
   console.log("Server started on port 3000");
 });
